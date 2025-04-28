@@ -40,3 +40,9 @@ tables = [lambda x = x: x * 10 for x in range(1, 11)]
 print(type(tables), tables)
 for table in tables:
     print(table())  # call lambda function for each element
+
+numbers = []
+for x in range(1, 11):
+    numbers.append(x)
+table = list(map(lambda x: x * 10, numbers))
+print(table)    
