@@ -1,8 +1,11 @@
 # Created by venv; see https://docs.python.org/3/library/venv.html
 
-__pycache__/
-.venv/Lib
-.venv/Scripts
+
+.venv/Lib/
+.venv/Scripts/
+.venv/Include/
 .venv/pyvenv.cfg
 *.pyc
-
+__pycache__/
+*.py[cod]
+*$py.class
