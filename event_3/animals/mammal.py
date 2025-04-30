@@ -2,17 +2,18 @@ from animals.animal import Animal
 
 class Mammal(Animal):
 
-    def __init__(self, file_name):
-        super().__init__(file_name)
+    def __init__(self,  group_name):
+        super().__init__(group_name)
         # private member
-        self.__animal_name = self.data["animal_name"]
+        self.__animal_name = "noname"
+
 
     def __to_str__(self):
-        return f"The {self.group_name} named {self.animal_name}. The {self.group_name}'s breed is {self.animal_type}"
+        return f"The {self.group_name} named {self.animal_name}"
 
     # Imlements the abstract move() method of the parent Animal class.
     def move(self):
-        print(f"{self.animal_type} {self.animal_name} can running")
+        print(f"{self.group_name} {self.animal_name} can running")
 
     # Getter
     @property

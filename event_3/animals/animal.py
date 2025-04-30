@@ -9,41 +9,28 @@ import json
 
 class Animal(ABC):
 
-    def __init__(self, file_name):
+    # static variables of Animal class
+    counter = 0 
+
+    def __init__(self, group_name):
         """
 
-        file_name:
         """
 
         # private members
-        self.__data = self.__read_file(file_name)
-        self.__group_name = self.__data["group_name"]
-        self.__animal_type = self.__data["animal_type"]
+        self.__group_name = group_name
+        
+        # static variable
+        Animal.counter += 1
 
-    # A private method
+    # A public method
     @staticmethod
-    def __read_file(file_name):
-        """
-
-        file_name:
-        :param file_name:
-        :return:
-        """
-        with open(file_name, "r") as file:
-            data = json.load(file)
-        return data
-
-    @property
-    def data(self):
-        return self.__data
+    def getCounter():
+        return Animal.counter
 
     @property
     def group_name(self):
         return self.__group_name
-
-    @property
-    def animal_type(self):
-        return self.__animal_type
 
     # An abstract method
     @abstractmethod
